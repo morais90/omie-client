@@ -67,7 +67,7 @@ class TestGetByErpId:
         assert payment.retem_ir is True
         assert payment.retem_iss is True
 
-    def test_get_by_erp_id_on_error(self, accounts_payable, payment_payload, respx_mock):
+    def test_get_by_erp_id_on_error(self, accounts_payable, respx_mock):
         respx_mock.post(AccountsPayable.ENDPOINT_URL).mock(
             return_value=httpx.Response(
                 status_code=500,
