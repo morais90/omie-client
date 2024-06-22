@@ -5,6 +5,10 @@ description = "Omie Client Python SDK"
 authors = ["BHub Tech Team <tech-team@bhub.ai>"]
 readme = "README.md"
 
+[project.urls]
+Homepage = "https://github.com/morais90/omie-client"
+Issues = "https://github.com/morais90/omie-client/issues"
+
 [tool.poetry.dependencies]
 python = "^3.9"
 httpx = {extras = ["http2"], version = "^0.27.0"}
