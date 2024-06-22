@@ -51,12 +51,12 @@ class Payment:
 class AccountsPayable(Endpoint):
     ENDPOINT_URL: typing.ClassVar[str] = "/v1/financas/contapagar/"
 
-    def get_by_erp_id(self, erp_id: int) -> Payment:
+    def get_by_id(self, omie_id: int) -> Payment:
         """Get a payment by its Omie's ID.
 
         Parameters
         ----------
-        erp_id : int
+        omie_id : int
             The payment Omie's ID.
 
         Returns
@@ -65,7 +65,7 @@ class AccountsPayable(Endpoint):
         """
         response = self._omie_client.request(
             self.ENDPOINT_URL,
-            data={"call": "ConsultarContaPagar", "param": [{"codigo_lancamento_omie": erp_id}]},
+            data={"call": "ConsultarContaPagar", "param": [{"codigo_lancamento_omie": omie_id}]},
         )
 
         return Payment(**response)
