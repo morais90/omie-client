@@ -1,5 +1,8 @@
 import pytest
 
+from omie_client.accounts_payable import AccountsPayable
+from omie_client.client import OmieClient
+
 
 @pytest.fixture
 def payment_payload():
@@ -11,9 +14,7 @@ def payment_payload():
         "data_vencimento": "14/05/2024",
         "valor_documento": 1612.05,
         "codigo_categoria": "2.01.96",
-        "categorias": [
-            {"codigo_categoria": "2.01.96", "percentual": 100, "valor": 1612.05}
-        ],
+        "categorias": [{"codigo_categoria": "2.01.96", "percentual": 100, "valor": 1612.05}],
         "data_previsao": "14/05/2024",
         "id_conta_corrente": 9788222289,
         "numero_documento_fiscal": "700218",
@@ -66,3 +67,9 @@ def payment_payload():
         "valor_pag": 0,
         "aprendizado_rateio": "",
     }
+
+
+@pytest.fixture
+def accounts_payable():
+    omie_client = OmieClient(app_key="fake-app-key", app_secret="fake-app-secret")
+    return AccountsPayable(omie_client)

@@ -10,3 +10,7 @@ class OmieRequestError(Exception):
 
 class OmieBlockedError(Exception):
     pass
+
+
+class OmieRateLimitError(Exception):
+    pass

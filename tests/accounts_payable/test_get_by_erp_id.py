@@ -6,14 +6,6 @@ import httpx
 import pytest
 
 from omie_client.accounts_payable import AccountsPayable
-from omie_client.client import OmieClient
-from omie_client.exceptions import OmieRequestError
-
-
-@pytest.fixture
-def accounts_payable():
-    omie_client = OmieClient(app_key="fake-app-key", app_secret="fake-app-secret")
-    return AccountsPayable(omie_client)
 
 
 @pytest.mark.respx(base_url="https://app.omie.com.br/api")
@@ -66,17 +58,3 @@ class TestGetByErpId:
         assert payment.retem_csll is True
         assert payment.retem_ir is True
         assert payment.retem_iss is True
-
-    def test_get_by_erp_id_on_error(self, accounts_payable, respx_mock):
-        respx_mock.post(AccountsPayable.ENDPOINT_URL).mock(
-            return_value=httpx.Response(
-                status_code=500,
-                json={
-                    "faultstring": "ERROR: Lançamento não cadastrado para o Código!",
-                    "faultcode": "SOAP-ENV:Client-105",
-                },
-            )
-        )
-
-        with pytest.raises(OmieRequestError, match="ERROR: Lançamento não cadastrado para o Código!"):
-            accounts_payable.get_by_erp_id(99999)
