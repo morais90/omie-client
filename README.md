@@ -5,7 +5,7 @@
 An unofficial implementation of Omie's API. 
 </p>
 
-For a full reference of the API documentation look at Omie (Developer Portal)[https://developer.omie.com.br/]
+For a full reference of the API documentation look at Omie [Developer Portal](https://developer.omie.com.br/)
 
 ### Installation:
 ```shell
@@ -30,5 +30,5 @@ Payment(
 
 Our foundation is built upon established and modern libraries.
 
-- (HTTPX - A next-generation HTTP client for Python.)[https://github.com/encode/httpx]
-- (Pydantic - Data validation using Python type hints.)[https://github.com/pydantic/pydantic]
+- [HTTPX - A next-generation HTTP client for Python.](https://github.com/encode/httpx)
+- [Pydantic - Data validation using Python type hints.](https://github.com/pydantic/pydantic)
