@@ -33,3 +33,7 @@ Our foundation is built upon established and modern libraries.
 
 - [HTTPX - A next-generation HTTP client for Python.](https://github.com/encode/httpx)
 - [Pydantic - Data validation using Python type hints.](https://github.com/pydantic/pydantic)
+
+### Contributing
+
+Would you like to support this project and help it progress 🙏✨? Follow our [Contributing Guidelines](CONTRIBUTING.md)
