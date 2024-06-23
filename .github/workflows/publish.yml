@@ -1,4 +1,4 @@
-name: Publish
+name: Build & Publish package
 
 on:
   release:
@@ -7,24 +7,45 @@ on:
     branches: [ main ]
 
 jobs:
-  publish:
+  build-package:
     runs-on: ubuntu-latest
-    environment:
-        name: pypi
-        url: https://pypi.org/p/omie-client
-    permissions:
-      id-token: write
+    environment: pypi
     steps:
       - name: Check out
         uses: actions/checkout@v4
 
-      - name: Set up Python 3.9
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: "3.x"
 
       - name: Install Poetry
         uses: snok/install-poetry@v1
 
       - name: Build and Publish
-        run: poetry publish --build
+        run: poetry build
+
+      - name: Store the package
+        uses: actions/upload-artifact@v3
+        with:
+          name: python-package
+          path: dist/
+
+  publish-to-pypi:
+    name: Publish to PyPI
+    needs:
+      - build-package
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/omie-client
+    permissions:
+      id-token: write
+    steps:
+      - name: Download the Python package
+        uses: actions/download-artifact@v3
+        with:
+          name: python-package
+          path: dist/
+      - name: Publish package 📦 to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,6 +1,6 @@
 ## Omie's Python SDK
 
-![Omie's Logo](assets/omie-logo.jpeg)
+![Omie's Logo]([assets/omie-logo.jpeg](https://raw.githubusercontent.com/morais90/omie-client/main/assets/omie-logo.jpeg))
 <p align="center">
 An unofficial implementation of Omie's API. 
 </p>
