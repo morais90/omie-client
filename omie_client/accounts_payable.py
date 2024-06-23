@@ -42,9 +42,11 @@ class Payment:
     def parse_date(cls, value: str) -> date:
         return datetime.strptime(value, "%d/%m/%Y").date()
 
-    @field_validator("retem_pis", "retem_cofins", "retem_csll", "retem_ir", "retem_iss", mode="before")
+    @field_validator(
+        "retem_pis", "retem_cofins", "retem_csll", "retem_ir", "retem_iss", mode="before"
+    )
     @classmethod
-    def parse_string_boolean(cls, value: str) -> str:
+    def parse_string_boolean(cls, value: str) -> bool:
         return value == "S"
 
 
