@@ -4,6 +4,10 @@ version = "0.1.0"
 description = "Omie Client Python SDK"
 authors = ["BHub Tech Team <tech-team@bhub.ai>"]
 readme = "README.md"
+classifiers = [
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 [project.urls]
 Homepage = "https://github.com/morais90/omie-client"
@@ -19,6 +23,7 @@ ruff = "^0.4.10"
 mypy = "^1.10.0"
 pytest = "^8.2.2"
 respx = "^0.21.1"
+pytest-cov = "^5.0.0"
 
 [build-system]
 requires = ["poetry-core"]
