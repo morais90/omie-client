@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.2.1 (2024-06-23)
+
+### Fix
+
+* fix: runs the publish workflow on tags pushes ([`01e0b11`](https://github.com/morais90/omie-client/commit/01e0b113206eb0f86ddcfc5d62a41740b8381adb))
+
 ## v0.2.0 (2024-06-23)
 
 ### Ci

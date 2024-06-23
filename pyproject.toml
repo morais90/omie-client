@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "omie-client"
-version = "0.2.0"
+version = "0.2.1"
 description = "Omie Client Python SDK"
 authors = ["BHub Tech Team <tech-team@bhub.ai>"]
 readme = "README.md"
