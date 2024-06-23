@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## v0.2.0 (2024-06-23)
+
+### Ci
+
+* ci: add release workflow ([`989f0c1`](https://github.com/morais90/omie-client/commit/989f0c11b60d3ec5cf7f31845fdd60ee0d65e485))
+
+### Feature
+
+* feat: implement the BankAccount list endpoint (#1)
+
+* chore: configure max-line-length to 100 chars
+* feat: implement the BankAccount list endpoint ([`82b1aab`](https://github.com/morais90/omie-client/commit/82b1aaba24244444b0ceb520737a7af0c5f13891))
+
 ## v0.1.0 (2024-06-23)
 
 ### Build
