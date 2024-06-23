@@ -2,9 +2,9 @@
 
 ![Omie's Logo](https://raw.githubusercontent.com/morais90/omie-client/main/assets/omie-logo.jpeg)
 <p align="center">An unofficial implementation of Omie's API. </p>
-<p align="center">
+
 [![codecov](https://codecov.io/github/morais90/omie-client/graph/badge.svg?token=09Q1ENULCS)](https://codecov.io/github/morais90/omie-client)
-</p>
+
 
 For a full reference of the API documentation look at Omie [Developer Portal](https://developer.omie.com.br/)
 
